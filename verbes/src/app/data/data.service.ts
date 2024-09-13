@@ -192,7 +192,7 @@ data: Verb[] = [
             tu: ['vois'],
             il: ['voit'],
             nous: ['voyons'],
-            vous: ['voyew'],
+            vous: ['voyez'],
             ils: ['voient']
         }
     },
