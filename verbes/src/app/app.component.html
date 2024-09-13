@@ -1,0 +1,45 @@
+<div>
+  <div>
+    <input
+      type="radio"
+      id="huey"
+      name="mode"
+      value="questions"
+      [(ngModel)]="mode"
+    />
+    <label for="huey">Questions</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      id="dewey"
+      name="mode"
+      value="answers"
+      [(ngModel)]="mode"
+    />
+    <label for="dewey">Answers</label>
+  </div>
+</div>
+
+<div class="container">
+  <ng-container *ngFor="let verb of verbs">
+    <div *ngIf="!!verb.verb" class="verb">
+      <b>{{ verb.verb }}</b>
+      <i>{{ verb.translation }}</i>
+      <hr>
+      <div *ngFor="let prenom of prenoms" class="input-row">
+        {{ prenom }} 
+        <ng-container [ngSwitch]="mode">
+          <ng-container *ngSwitchCase="'questions'">
+            <input [id]="verb.verb + '_' + prenom" class="input" (keydown.enter)="onEnter($event, verb, prenom)"  autocomplete="off"/>
+          </ng-container>
+          <ng-container *ngSwitchCase="'answers'">
+            {{ verb.forms[prenom][0] }}
+          </ng-container>
+        </ng-container>
+
+      </div>
+    </div>
+  </ng-container>
+</div>
