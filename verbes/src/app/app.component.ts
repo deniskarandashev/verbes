@@ -15,9 +15,18 @@ export class AppComponent implements OnInit {
   mode: string = 'questions';
 
   @ViewChildren('inputElement') inputs!: QueryList<ElementRef>;
+  @ViewChildren('row') rows!: QueryList<ElementRef>;
 
   ngOnInit(): void {
     this.verbs = this.dataService.getData();
+  }
+
+  answer(verb: Verb, prenom: string) {
+    return verb.forms[prenom  + 'Scecific' as VerbFormsType] ?? verb.forms[prenom as VerbFormsType][0]
+  }
+
+  markRowAsMistaken(row: HTMLDivElement, verb: Verb,prenom: string, i: number) {
+    row.style.backgroundColor = row.style.backgroundColor === 'red' ? '' : 'red'  
   }
 
   onEnter($event: any, verb: Verb, prenom: string, i: number, j: number) {

@@ -146,7 +146,7 @@ data: Verb[] = [
     },
     {
         verb: 'prendre',
-        translation: '',
+        translation: 'брать',
         group: VerbGroup.gr3,
         forms: {
             je: ['prends'],
