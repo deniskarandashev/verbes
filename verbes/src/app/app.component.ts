@@ -49,4 +49,16 @@ export class AppComponent implements OnInit {
       }
     }
   }
+
+  onCheckBox(e: any, verb: Verb, card: HTMLDivElement, checkbox: HTMLDivElement): void {
+    e.stopPropagation()
+    if (e.target.checked) {
+      card.style.backgroundColor = 'lightgrey';
+      this.verbs = [...this.verbs.filter(v => v.verb !== verb.verb), verb]
+    } else {
+      card.style.backgroundColor = 'unset';
+      this.verbs = [verb, ...this.verbs.filter(v => v.verb !== verb.verb)]
+    }
+    
+  }
 }

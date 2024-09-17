@@ -24,20 +24,27 @@
 
 <div class="container">
   <ng-container *ngFor="let verb of verbs; let i = index">
-    <div *ngIf="!!verb.verb" class="verb">
+    <div #card *ngIf="!!verb.verb" class="verb">
       <div class="flex-row">
         <div>
           <b>{{ verb.verb }}</b>
           <i>{{ ' (' + verb.translation + ')' }}</i>
         </div>
-        <input type="checkbox"/>
+        <input #checkbox type="checkbox" (click)="onCheckBox($event, verb, card, checkbox)"/>
       </div>
       <hr>
       <div #row *ngFor="let prenom of prenoms; let j = index" class="input-row" (click)="markRowAsMistaken(row, verb, prenom, i)">
         {{ prenom }} 
         <ng-container [ngSwitch]="mode">
           <ng-container *ngSwitchCase="'questions'">
-            <input #inputElement [id]="verb.verb + '_' + prenom" class="input" (keydown.enter)="onEnter($event, verb, prenom, i, j)"  autocomplete="off"/>
+            <input 
+              #inputElement 
+              [id]="verb.verb + '_' + prenom" 
+              class="input" 
+              (keydown.enter)="onEnter($event, verb, prenom, i, j)"  
+              (click)="$event.stopPropagation()"
+              autocomplete="off"
+            />
           </ng-container>
           <ng-container *ngSwitchCase="'answers'">
             {{ answer(verb, prenom) }}
