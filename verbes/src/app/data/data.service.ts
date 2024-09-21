@@ -8,8 +8,15 @@ export class DataService {
 
   constructor() { }
 
-  getData(): Verb[] {
-    return this.data;
+  getData(group: VerbGroup): Verb[] {
+    switch(group) {
+        case VerbGroup.gr1:
+            return this.data_1_gr;
+        case VerbGroup.gr2:
+            return this.data_2_gr;
+        case VerbGroup.gr3:
+            return this.data_3_gr;
+    }
   }
 
 // {
@@ -26,7 +33,533 @@ export class DataService {
 //     }
 // },
 
-data: Verb[] = [
+data_1_gr: Verb[] = [
+    {
+        verb: 'écouter',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: ['écoute'],
+            tu: ['écoutes'],
+            il: ['écoute'],
+            nous: ['écoutons'],
+            vous: ['écoutez'],
+            ils: ['écoutent']
+        }
+    },
+    {
+        verb: 'commencer',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: ['commence'],
+            tu: ['commences'],
+            il: ['commence'],
+            nous: ['commençons'],
+            vous: ['commencez'],
+            ils: ['commencent']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+]
+
+data_2_gr: Verb[] = [
+    {
+        verb: 'écouter',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: ['écoute'],
+            tu: ['écoutes'],
+            il: ['écoute'],
+            nous: ['écoutons'],
+            vous: ['écoutez'],
+            ils: ['écoutent']
+        }
+    },
+    {
+        verb: 'commencer',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: ['commence'],
+            tu: ['commences'],
+            il: ['commence'],
+            nous: ['commençons'],
+            vous: ['commencez'],
+            ils: ['commencent']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+    {
+        verb: '',
+        translation: '',
+        group: VerbGroup.gr1,
+        forms: {
+            je: [''],
+            tu: [''],
+            il: [''],
+            nous: [''],
+            vous: [''],
+            ils: ['']
+        }
+    },
+]
+
+data_3_gr: Verb[] = [
     {
         verb: 'avoir',
         translation: 'иметь',
@@ -486,266 +1019,5 @@ data: Verb[] = [
     }
 ]
 
-dataFirstGroup: Verb[] = [
-    {
-        verb: 'écouter',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: ['écoute'],
-            tu: ['écoutes'],
-            il: ['écoute'],
-            nous: ['écoutons'],
-            vous: ['écoutez'],
-            ils: ['écoutent']
-        }
-    },
-    {
-        verb: 'commencer',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: ['commence'],
-            tu: ['commences'],
-            il: ['commence'],
-            nous: ['commençons'],
-            vous: ['commencez'],
-            ils: ['commencent']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-]
+
 }

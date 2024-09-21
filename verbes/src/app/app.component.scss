@@ -38,3 +38,13 @@ hr {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.radio-btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio-btns-col {
+    display: flex;
+    flex-direction: column;
+}

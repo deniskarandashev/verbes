@@ -3,6 +3,7 @@ export interface Verb {
     translation: string,
     group: VerbGroup,
     forms: VerbForms,
+    isCorrect?: VerbFormsAnswered,
     formsSpecific?: VerbFormsSpecific,
     hidden?: boolean
 }
@@ -14,6 +15,15 @@ export interface VerbForms {
     nous: string[],
     vous: string[],
     ils: string[]
+}
+
+export interface VerbFormsAnswered {
+    je?: boolean,
+    tu?: boolean,
+    il?: boolean,
+    nous?: boolean,
+    vous?: boolean,
+    ils?: boolean
 }
 
 export interface VerbFormsSpecific {

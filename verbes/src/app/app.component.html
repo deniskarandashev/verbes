@@ -1,24 +1,42 @@
 <div>
   <div>
-    <input
-      type="radio"
-      id="huey"
-      name="mode"
-      value="questions"
-      [(ngModel)]="mode"
-    />
-    <label for="huey">Questions</label>
-  </div>
+    <div class="radio-btns">
 
-  <div>
-    <input
-      type="radio"
-      id="dewey"
-      name="mode"
-      value="answers"
-      [(ngModel)]="mode"
-    />
-    <label for="dewey">Answers</label>
+      <div class="radio-btns-col">
+        <div>
+          <input type="radio" id="questions_1" name="mode" value="questions_1" [ngModel]="mode" (click)="onRadioBtn($event)"/>
+          <label for="questions_1">1gr questions</label>
+        </div>
+        <div>
+          <input type="radio" id="answers_1" name="mode" value="answers_1" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="answers_1">1gr answers</label>
+        </div>
+      </div>
+
+      <!-- <div class="radio-btns-col">
+        <div>
+          <input type="radio" id="questions_2" name="mode" value="questions_2" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="questions_2">2gr questions</label>
+        </div>
+        <div>
+          <input type="radio" id="answers_2" name="mode" value="answers_2" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="answers_2">2gr answers</label>
+        </div>
+      </div> -->
+
+      <div class="radio-btns-col">
+        <div>
+          <input type="radio" id="questions_3" name="mode" value="questions_3" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="questions_3">3gr questions</label>
+        </div>
+        <div>
+          <input type="radio" id="answers_3" name="mode" value="answers_3" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="answers_3">3gr answers</label>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
@@ -30,26 +48,26 @@
           <b>{{ verb.verb }}</b>
           <i>{{ ' (' + verb.translation + ')' }}</i>
         </div>
-        <input #checkbox type="checkbox" (click)="onCheckBox($event, verb, card, checkbox)"/>
+        <input #checkbox type="checkbox" (click)="onCheckBox($event, verb, card, checkbox)" />
       </div>
       <hr>
-      <div #row *ngFor="let prenom of prenoms; let j = index" class="input-row" (click)="markRowAsMistaken(row, verb, prenom, i)">
-        {{ prenom }} 
-        <ng-container [ngSwitch]="mode">
-          <ng-container *ngSwitchCase="'questions'">
-            <input 
-              #inputElement 
-              [id]="verb.verb + '_' + prenom" 
-              class="input" 
-              (keydown.enter)="onEnter($event, verb, prenom, i, j)"  
-              (click)="$event.stopPropagation()"
-              autocomplete="off"
-            />
-          </ng-container>
-          <ng-container *ngSwitchCase="'answers'">
-            {{ answer(verb, prenom) }}
-          </ng-container>
+      <div 
+        #row *ngFor="let prenom of prenoms; 
+        let j = index" 
+        class="input-row"
+        [style.backgroundColor]="verb.isCorrect?.[prenom] === false ? 'red' : ''"
+        (click)="markRowAsMistaken(row, verb, prenom, i)"
+      >
+        {{ prenom }}
+
+        <ng-container *ngIf="mode.startsWith('questions_')">
+          <input #inputElement [id]="verb.verb + '_' + prenom" class="input"
+            (keydown.enter)="onEnter($event, verb, prenom, i, j)" (click)="$event.stopPropagation()"
+            autocomplete="off" />
         </ng-container>
+        <ng-container *ngIf="mode.startsWith('answers_')">
+          {{ answer(verb, prenom) }}
+        </ng-container> 
 
       </div>
     </div>
