@@ -34,6 +34,10 @@
           <label for="answers_3">3gr answers</label>
         </div>
       </div>
+      <div>
+        <input type="radio" id="articles" name="mode" value="articles" [ngModel]="mode" (click)="onRadioBtn($event)" />
+        <label for="articles">Articles</label>
+      </div>
     </div>
   </div>
 </div>
@@ -49,7 +53,17 @@
         <input #checkbox type="checkbox" (click)="onCheckBox($event, verb, card, checkbox)" />
       </div>
       <hr>
-      <div 
+      <ng-container *ngIf="!!verb?.verbWithArticles?.[0]; then articleTpl; else mainTpl"></ng-container>
+      <ng-template #articleTpl>
+          <ng-container *ngFor="let a of verb?.verbWithArticles; let i = index">
+            <hr *ngIf="i > 0">
+            <b>&#x2605;{{ '  ' + a.article }}</b>
+            <i *ngFor="let av of a.articleWithVerb" class="flex-col">&#x269C;{{ '  ' + av.text }} ({{ av.translation }})<br></i>
+            <span *ngFor="let e of a.examples" class="flex-col"> &#x268A;{{ '  ' + e }}<br></span>
+          </ng-container>
+      </ng-template>
+      <ng-template #mainTpl>
+        <div 
         #row *ngFor="let prenom of prenoms; 
         let j = index" 
         class="input-row"
@@ -68,6 +82,8 @@
         </ng-container> 
 
       </div>
+      </ng-template>
+      
     </div>
   </ng-container>
 </div>

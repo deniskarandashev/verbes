@@ -5,7 +5,19 @@ export interface Verb {
     forms: VerbForms,
     isCorrect?: VerbFormsAnswered,
     formsSpecific?: VerbFormsSpecific,
-    hidden?: boolean
+    hidden?: boolean,
+    verbWithArticles?: VerbWithArticle[]
+}
+
+export interface VerbWithArticle {
+    article?: string,
+    articleWithVerb?: ArticleWithVerb[],
+    examples?: string[]
+}
+
+export interface ArticleWithVerb {
+    text: string,
+    translation: string
 }
 
 export interface VerbForms {

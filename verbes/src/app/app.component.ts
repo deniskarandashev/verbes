@@ -45,6 +45,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   get verbsToShow(): Verb[] {   
+    if (this.mode === 'articles') {
+      return this.verbs.filter((v: Verb) => !!v.verbWithArticles?.[0]);
+    }
     return this.verbs.filter((v: Verb) => v.group === this.currentGroup);
   }
 

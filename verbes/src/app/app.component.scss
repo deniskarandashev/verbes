@@ -39,6 +39,11 @@ hr {
     justify-content: space-between;
 }
 
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
 .radio-btns {
     display: flex;
     flex-direction: row;

@@ -65,30 +65,92 @@ data_1_gr: Verb[] = [
         }
     },
     {
-        verb: '',
-        translation: '',
+        verb: 'parler',
+        translation: 'говорить',
         group: VerbGroup.gr1,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
+            je: ['parle'],
+            tu: ['parles'],
+            il: ['parle'],
+            nous: ['parlons'],
+            vous: ['parlez'],
+            ils: ['parlent']
+        },
+        verbWithArticles: [
+            {
+                article: "de",
+                articleWithVerb: [
+                    {
+                        text: "parler  de quelqu'un",
+                        translation: "говорить о ком-то"
+                    },
+                    {
+                        text: "parler de quelque chose",
+                        translation: "поговорить о чем-то"
+                    }
+                ],
+                examples: [
+                    'je parle du travail',
+                    'tu parles de la voiture',
+                    'il parle des magasins'
+                ]
+            },
+            {
+                article: "à",
+                articleWithVerb: [
+                    {
+                        text: "parler à quelqu'un",
+                        translation: "говорить с кем-то"
+                    }
+                ],
+                examples: [
+                    'je parle à Mari'
+                ]
+            }
+        ]
     },
     {
-        verb: '',
-        translation: '',
+        verb: 'jouer',
+        translation: 'играть',
         group: VerbGroup.gr1,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
+            je: ['joue'],
+            tu: ['joues'],
+            il: ['joue'],
+            nous: ['jouons'],
+            vous: ['jouez'],
+            ils: ['jouent']
+        },
+        verbWithArticles: [
+            {
+                article: "de",
+                articleWithVerb: [
+                    {
+                        text: "jouer de quelque chose",
+                        translation: "играть на муз. инструменте"
+                    }
+                ],
+                examples: [
+                    'je joue du piano',
+                    'tu joues de la guitare',
+                    'il joue des tambourins'
+                ]
+            },
+            {
+                article: "à",
+                articleWithVerb: [
+                    {
+                        text: "jouer à quelque chose",
+                        translation: "играть (спорт)"
+                    }
+                ],
+                examples: [
+                    'je joue au tennis (à + le = au)',
+                    'tu joues à la pétanque (à + la = à la)',
+                    'il joue aux cartes (à +les = aux)'
+                ]
+            }
+        ]
     },
     {
         verb: '',
@@ -497,6 +559,33 @@ data_2_gr: Verb[] = [
             ils: ['réunissent']
         }
     },
+    {
+        verb: 'devenir',
+        translation: 'становиться',
+        group: VerbGroup.gr2,
+        forms: {
+            je: ['deviens'],
+            tu: ['deviens'],
+            il: ['devient'],
+            nous: ['devenons'],
+            vous: ['devenez'],
+            ils: ['deviennent']
+        }
+    },
+    
+    {
+        verb: 'revenir',
+        translation: 'возвращаться',
+        group: VerbGroup.gr2,
+        forms: {
+            je: ['reviens'],
+            tu: ['reviens'],
+            il: ['revient'],
+            nous: ['revenons'],
+            vous: ['revenez'],
+            ils: ['reviennent']
+        }
+    },
 ]
 
 data_3_gr: Verb[] = [
@@ -602,7 +691,21 @@ data_3_gr: Verb[] = [
             nous: ['allons'],
             vous: ['allez'],
             ils: ['vont']
-        }
+        },
+        verbWithArticles: [
+            {
+                article: "à",
+                articleWithVerb: [
+                    {
+                        text: "aller à + nom de lieu",
+                        translation: "идти (ехать) в + название места"
+                    }
+                ],
+                examples: [
+                    "aller à Paris"
+                ]
+            }
+        ]
     },
     {
         verb: 'venir',
