@@ -8,15 +8,19 @@ export class DataService {
 
   constructor() { }
 
-  getData(group: VerbGroup): Verb[] {
-    switch(group) {
-        case VerbGroup.gr1:
-            return this.data_1_gr;
-        case VerbGroup.gr2:
-            return this.data_2_gr;
-        case VerbGroup.gr3:
-            return this.data_3_gr;
-    }
+//   getData(group: VerbGroup): Verb[] {
+//     switch(group) {
+//         case VerbGroup.gr1:
+//             return this.data_1_gr;
+//         case VerbGroup.gr2:
+//             return this.data_2_gr;
+//         case VerbGroup.gr3:
+//             return this.data_3_gr;
+//     }
+//   }
+
+  getAll(): Verb[] {
+    return [...this.data_1_gr, ...this.data_2_gr, ...this.data_3_gr];
   }
 
 // {
@@ -298,263 +302,199 @@ data_1_gr: Verb[] = [
 
 data_2_gr: Verb[] = [
     {
-        verb: 'écouter',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'finir',
+        translation: 'закончить',
+        group: VerbGroup.gr2,
         forms: {
-            je: ['écoute'],
-            tu: ['écoutes'],
-            il: ['écoute'],
-            nous: ['écoutons'],
-            vous: ['écoutez'],
-            ils: ['écoutent']
+            je: ['finis'],
+            tu: ['finis'],
+            il: ['finit'],
+            nous: ['finissons'],
+            vous: ['finissez'],
+            ils: ['finissent']
+        }
+    },
+    
+    {
+        verb: 'choisir',
+        translation: 'выбирать',
+        group: VerbGroup.gr2,
+        forms: {
+            je: ['choisis'],
+            tu: ['choisis'],
+            il: ['choisit'],
+            nous: ['choisissons'],
+            vous: ['choisissez'],
+            ils: ['choisissent']
         }
     },
     {
-        verb: 'commencer',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'grandir',
+        translation: 'расти',
+        group: VerbGroup.gr2,
         forms: {
-            je: ['commence'],
-            tu: ['commences'],
-            il: ['commence'],
-            nous: ['commençons'],
-            vous: ['commencez'],
-            ils: ['commencent']
+            je: ['grandis'],
+            tu: ['grandis'],
+            il: ['grandit'],
+            nous: ['grandissons'],
+            vous: ['grandissez'],
+            ils: ['grandissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'remplir',
+        translation: 'заполнить',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['remplis'],
+            tu: ['remplis'],
+            il: ['remplit'],
+            nous: ['remplissons'],
+            vous: ['remplissez'],
+            ils: ['remplissent']
+        }
+    }, 
+    {
+        verb: 'réagir',
+        translation: 'реагировать',
+        group: VerbGroup.gr2,
+        forms: {
+            je: ['réagis'],
+            tu: ['réagis'],
+            il: ['réagit'],
+            nous: ['réagissons'],
+            vous: ['réagissez'],
+            ils: ['réagissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'réussir',
+        translation: 'преуспеть',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['réussis'],
+            tu: ['réussis'],
+            il: ['réussit'],
+            nous: ['réussissons'],
+            vous: ['réussissez'],
+            ils: ['réussissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'grossir',
+        translation: 'толстеть',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['grossis'],
+            tu: ['grossis'],
+            il: ['grossit'],
+            nous: ['grossissons'],
+            vous: ['grossissez'],
+            ils: ['grossissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'réfléchir',
+        translation: 'размышлять',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['réfléchis'],
+            tu: ['réfléchis'],
+            il: ['réfléchit'],
+            nous: ['réfléchissons'],
+            vous: ['réfléchissez'],
+            ils: ['réfléchissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'nourrir',
+        translation: 'кормить',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['nourris'],
+            tu: ['nourris'],
+            il: ['nourrit'],
+            nous: ['nourrissons'],
+            vous: ['nourrissez'],
+            ils: ['nourrissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'vieillir',
+        translation: 'стареть',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['vieillis'],
+            tu: ['vieillis'],
+            il: ['vieillit'],
+            nous: ['vieillissons'],
+            vous: ['vieillissez'],
+            ils: ['vieillissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'obéir',
+        translation: 'подчиняться',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['obéis'],
+            tu: ['obéis'],
+            il: ['obéit'],
+            nous: ['obéissons'],
+            vous: ['obéissez'],
+            ils: ['obéissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'maigrir',
+        translation: 'худеть',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['maigris'],
+            tu: ['maigris'],
+            il: ['maigrit'],
+            nous: ['maigrissons'],
+            vous: ['maigrissez'],
+            ils: ['maigrissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'accomplir',
+        translation: 'исполнить',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['accomplis'],
+            tu: ['accomplis'],
+            il: ['accomplit'],
+            nous: ['accomplissons'],
+            vous: ['accomplissez'],
+            ils: ['accomplissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'enrichir',
+        translation: 'обогащать',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['enrichis'],
+            tu: ['enrichis'],
+            il: ['enrichit'],
+            nous: ['enrichissons'],
+            vous: ['enrichissez'],
+            ils: ['enrichissent']
         }
     },
     {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
+        verb: 'réunir',
+        translation: 'обьединить',
+        group: VerbGroup.gr2,
         forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
-        }
-    },
-    {
-        verb: '',
-        translation: '',
-        group: VerbGroup.gr1,
-        forms: {
-            je: [''],
-            tu: [''],
-            il: [''],
-            nous: [''],
-            vous: [''],
-            ils: ['']
+            je: ['réunis'],
+            tu: ['réunis'],
+            il: ['réunit'],
+            nous: ['réunissons'],
+            vous: ['réunissons'],
+            ils: ['réunissent']
         }
     },
 ]

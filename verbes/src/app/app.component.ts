@@ -10,9 +10,17 @@ import { Verb, VerbForms, VerbFormsAnswered, VerbFormsType, VerbGroup } from './
 export class AppComponent implements OnInit, OnDestroy {
   protected dataService = inject(DataService);
   protected prenoms: VerbFormsType[] = ['je', 'tu', 'il', 'nous', 'vous', 'ils'];
-  protected verbs!: Verb[]
+  protected vowels: string[] = [
+    'e', 'é', 'è', 'ê',
+    'u', 'ù', 'û',
+    'a', 'à', 'â', 
+    'i', 'î', 
+    'o', 'ô', 
+    'h'
+  ]
+  private verbs!: Verb[];
 
-  mode: string = 'questions_1';
+  mode!: string;
 
   @ViewChildren('inputElement') inputs!: QueryList<ElementRef>;
   @ViewChildren('row') rows!: QueryList<ElementRef>;
@@ -23,7 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (savedVerbs) {
       this.verbs = JSON.parse(savedVerbs);
     } else {
-      this.verbs = this.dataService.getData(VerbGroup.gr1);
+      this.verbs = this.dataService.getAll();
     }
     if (savedMode) {
       this.mode = savedMode;
@@ -34,6 +42,24 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.saveState();
+  }
+
+  get verbsToShow(): Verb[] {   
+    return this.verbs.filter((v: Verb) => v.group === this.currentGroup);
+  }
+
+  get currentGroup(): VerbGroup {
+    
+    switch (this.mode.split('_')[1]) {
+      case '1':
+        return VerbGroup.gr1;
+      case '2':
+        return VerbGroup.gr2;
+      case '3':
+        return VerbGroup.gr3;
+      default:
+        return VerbGroup.gr1;
+    }
   }
 
   answer(verb: Verb, prenom: string) {
@@ -50,6 +76,12 @@ export class AppComponent implements OnInit, OnDestroy {
       verb.isCorrect = verb.isCorrect ? verb.isCorrect : {}
       verb.isCorrect[prenom as VerbFormsType] = true;
     }
+    
+    this.verbs.forEach((v: Verb) => {
+      if (v.verb === verb.verb) {
+        v.verb = verb.verb;
+      }
+    })
     this.saveState();
   }
 
@@ -91,22 +123,39 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onRadioBtn(e: any): void {
     this.mode = e.target?.value ?? 'questions_1';
-    switch(this.mode) {
-      case 'questions_1':
-      case 'answers_1':
-        this.verbs = this.dataService.getData(VerbGroup.gr1);
-        break;
-      case 'questions_2':
-      case 'answers_2':
-        this.verbs = this.dataService.getData(VerbGroup.gr2);
-        break;
-      case 'questions_3':
-      case 'answers_3':
-        this.verbs = this.dataService.getData(VerbGroup.gr3);
-        break;
-    }
+    // switch(this.mode) {
+    //   case 'questions_1':
+    //   case 'answers_1':
+    //     this.verbs = this.dataService.getData(VerbGroup.gr1);
+    //     break;
+    //   case 'questions_2':
+    //   case 'answers_2':
+    //     this.verbs = this.dataService.getData(VerbGroup.gr2);
+    //     break;
+    //   case 'questions_3':
+    //   case 'answers_3':
+    //     this.verbs = this.dataService.getData(VerbGroup.gr3);
+    //     break;
+    // }
 
     this.saveState();
+  }
+
+  getPrenom(prenom: string, verbFormsJe: string[]): string {
+    if (prenom === 'je') {
+      const isStartsWithVowel = this.vowels.some(vowel => {
+        return (verbFormsJe[0]?.startsWith(vowel) || verbFormsJe[1]?.startsWith(vowel))
+      })
+      if (isStartsWithVowel) {
+        return "j'";
+      }
+    }
+    return `${prenom}`;
+  }
+
+  clear(): void {
+    localStorage.clear
+    this.verbs = this.dataService.getAll()
   }
 
   private saveState(): void {

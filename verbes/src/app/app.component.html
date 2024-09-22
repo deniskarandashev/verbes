@@ -1,7 +1,7 @@
 <div>
   <div>
     <div class="radio-btns">
-
+      <button (click)="clear()">x</button>
       <div class="radio-btns-col">
         <div>
           <input type="radio" id="questions_1" name="mode" value="questions_1" [ngModel]="mode" (click)="onRadioBtn($event)"/>
@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <!-- <div class="radio-btns-col">
+      <div class="radio-btns-col">
         <div>
           <input type="radio" id="questions_2" name="mode" value="questions_2" [ngModel]="mode" (click)="onRadioBtn($event)" />
           <label for="questions_2">2gr questions</label>
@@ -22,7 +22,7 @@
           <input type="radio" id="answers_2" name="mode" value="answers_2" [ngModel]="mode" (click)="onRadioBtn($event)" />
           <label for="answers_2">2gr answers</label>
         </div>
-      </div> -->
+      </div>
 
       <div class="radio-btns-col">
         <div>
@@ -34,14 +34,12 @@
           <label for="answers_3">3gr answers</label>
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
 
 <div class="container">
-  <ng-container *ngFor="let verb of verbs; let i = index">
+  <ng-container *ngFor="let verb of verbsToShow; let i = index">
     <div #card *ngIf="!!verb.verb" class="verb">
       <div class="flex-row">
         <div>
@@ -58,7 +56,7 @@
         [style.backgroundColor]="verb.isCorrect?.[prenom] === false ? 'red' : ''"
         (click)="markRowAsMistaken(row, verb, prenom, i)"
       >
-        {{ prenom }}
+        {{ getPrenom(prenom, verb.forms.je) }}
 
         <ng-container *ngIf="mode.startsWith('questions_')">
           <input #inputElement [id]="verb.verb + '_' + prenom" class="input"

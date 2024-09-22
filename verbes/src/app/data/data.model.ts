@@ -38,5 +38,5 @@ export interface VerbFormsSpecific {
 export type VerbFormsType = 'je' | 'tu' | 'il' | 'nous' | 'vous' | 'ils'
 
 export enum VerbGroup {
-    gr1, gr2, gr3
+    gr1 = '1', gr2 = '2', gr3 = '3'
 }
