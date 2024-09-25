@@ -53,7 +53,7 @@
         <input #checkbox type="checkbox" (click)="onCheckBox($event, verb, card, checkbox)" />
       </div>
       <hr>
-      <ng-container *ngIf="!!verb?.verbWithArticles?.[0]; then articleTpl; else mainTpl"></ng-container>
+      <ng-container *ngIf="!!verb?.verbWithArticles?.[0] && !currentGroup; then articleTpl; else mainTpl"></ng-container>
       <ng-template #articleTpl>
           <ng-container *ngFor="let a of verb?.verbWithArticles; let i = index">
             <hr *ngIf="i > 0">

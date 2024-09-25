@@ -51,7 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
     return this.verbs.filter((v: Verb) => v.group === this.currentGroup);
   }
 
-  get currentGroup(): VerbGroup {
+  get currentGroup(): VerbGroup | null {
     
     switch (this.mode.split('_')[1]) {
       case '1':
@@ -60,9 +60,9 @@ export class AppComponent implements OnInit, OnDestroy {
         return VerbGroup.gr2;
       case '3':
         return VerbGroup.gr3;
-      default:
-        return VerbGroup.gr1;
     }
+
+    return null;
   }
 
   answer(verb: Verb, prenom: string) {
