@@ -35,8 +35,14 @@
         </div>
       </div>
       <div>
-        <input type="radio" id="articles" name="mode" value="articles" [ngModel]="mode" (click)="onRadioBtn($event)" />
-        <label for="articles">Articles</label>
+        <div>
+          <input type="radio" id="articles" name="mode" value="articles" [ngModel]="mode" (click)="onRadioBtn($event)" />
+          <label for="articles">Articles</label>
+        </div>
+        <div>
+          <input type="checkbox" id="hiddenMode" name="hiddenMode" value="hiddenMode" [(ngModel)]="isHiddenMode"/>
+          <label for="articles">Hidden mode</label>
+        </div>
       </div>
     </div>
   </div>
@@ -78,7 +84,7 @@
             autocomplete="off" />
         </ng-container>
         <ng-container *ngIf="mode.startsWith('answers_')">
-          {{ answer(verb, prenom) }}
+          {{ isHiddenMode && !isOpenedInHiddenMode.has(verb + '_' + prenom + '_' + i) ? '...' : answer(verb, prenom, i) }}
         </ng-container> 
 
       </div>

@@ -9,6 +9,8 @@ import { Verb, VerbForms, VerbFormsAnswered, VerbFormsType, VerbGroup } from './
 })
 export class AppComponent implements OnInit, OnDestroy {
   protected dataService = inject(DataService);
+  protected isHiddenMode = false
+  protected isOpenedInHiddenMode = new Set<string>
   protected prenoms: VerbFormsType[] = ['je', 'tu', 'il', 'nous', 'vous', 'ils'];
   protected vowels: string[] = [
     'e', 'é', 'è', 'ê',
@@ -65,11 +67,20 @@ export class AppComponent implements OnInit, OnDestroy {
     return null;
   }
 
-  answer(verb: Verb, prenom: string) {
+  answer(verb: Verb, prenom: string, i: number) {
     return verb.forms[prenom  + 'Scecific' as VerbFormsType] ?? verb.forms[prenom as VerbFormsType][0]
   }
 
-  markRowAsMistaken(row: HTMLDivElement, verb: Verb, prenom: string, i: number) {  
+  markRowAsMistaken(row: HTMLDivElement, verb: Verb, prenom: string, i: number) { 
+    if (this.isHiddenMode) {
+      const key = verb + '_' + prenom  + '_' + i;
+      if (this.isOpenedInHiddenMode.has(key)) {
+        this.isOpenedInHiddenMode.delete(key);
+      } else {
+        this.isOpenedInHiddenMode.add(key)
+      }
+      return
+    } 
     if (row.style.backgroundColor !== 'red') {
       row.style.backgroundColor = 'red';
       verb.isCorrect = verb.isCorrect ? verb.isCorrect : {}
